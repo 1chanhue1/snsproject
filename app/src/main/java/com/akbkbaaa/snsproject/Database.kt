@@ -3,10 +3,10 @@ package com.akbkbaaa.snsproject
 object Database {
     //회원가입 한 유저 정보
     private val userInfos: MutableList<UserInfo> = mutableListOf(
-        UserInfo("1chanhue1", "김찬휘", "1234",null),
-        UserInfo("ggilggilmonster", "정용찬", "1234",null),
-        UserInfo("kim4152", "김정호", "1234",null),
-        UserInfo("Dyaoss", "김대현", "1234",null),
+        UserInfo("1chanhue1", "김찬휘", "1234",null,"ISFP"),
+        UserInfo("ggilggilmonster", "정용찬", "1234",null,"INFJ"),
+        UserInfo("kim4152", "김정호", "1234",null,"ISFJ"),
+        UserInfo("Dyaoss", "김대현", "1234",null,"ISFP"),
     )
     fun getUserInfo(userId: String): UserInfo? {
         return userInfos.find { it.userId == userId } //결과값이 없으면 null 반환
@@ -35,9 +35,9 @@ object Database {
 
         Post("kim4152", listOf(R.drawable.kjh_11, R.drawable.kjh_12), "설악산!! 좋았지만 다시는 가지 않을거야"),
         Post("kim4152", listOf(R.drawable.kjh_11, R.drawable.kjh_12), "복붙"),
-
         Post("Dyaoss", listOf(R.drawable.kdh_11, R.drawable.kdh_12 ), "한화 화이팅"),
         Post("Dyaoss", listOf(R.drawable.kdh_11, R.drawable.kdh_12 ), "복붙"),
+
     )
     fun getAllPosts():List<Post>{
         return posts
@@ -48,6 +48,6 @@ object Database {
 
 }
 
-data class UserInfo(val userId: String, val userName: String, val userPw: String, val userProfile: Int?)
+data class UserInfo(val userId: String, val userName: String, val userPw: String, val userProfile: Int?, val userMbti: String)
 data class Post(val userId: String, val photos: List<Int>, val content: String)
 
