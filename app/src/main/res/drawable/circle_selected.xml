@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#405C96" /> <!-- 선택된 점의 색깔 -->
+    <size
+        android:width="8dp"
+        android:height="8dp" />
+</shape>
