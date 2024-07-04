@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <ImageView
+        android:id="@+id/iv_user_profile_photo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dv_title"
+        app:srcCompat="@drawable/empty_profile" />
+
+    <TextView
+        android:id="@+id/tv_dv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:text="Detail"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="176dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_user_profile_photo"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_user_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/tv_user_mbti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/tv_user_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/iv_user_profile_photo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/iv_post1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/jdh_11"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tv_post1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="11sp"
+                android:layout_gravity="left"
+                />
+
+            <ImageView
+                android:id="@+id/iv_post2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/jdh_12"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tv_post2"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textSize="11sp"
+                android:layout_gravity="left"
+                android:layout_marginBottom="10dp"
+                android:text="@string/detail_post" />
+
+            <ImageView
+                android:id="@+id/iv_post3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/kch_11"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textSize="11sp"
+                android:layout_gravity="left"
+                android:text="@string/detail_post"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
