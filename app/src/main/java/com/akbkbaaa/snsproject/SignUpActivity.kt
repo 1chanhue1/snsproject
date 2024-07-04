@@ -31,6 +31,7 @@ class SignUpActivity : AppCompatActivity() {
 
 //        중복 체크 부분
 //        val check = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_check)
+//        하나라도 비었다면 셋온클릭 리스너를 빠져나감.
 
         val signUp = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_up1)
 
@@ -59,7 +60,11 @@ class SignUpActivity : AppCompatActivity() {
 
 //            아이디 중복 체크 부분
 //            } else if() {
-
+//            get으로 아이디 받아와서 중복확인
+//
+//            null이면 회원가입 성공
+//
+//            있으면 중복된 아이디가 있습니다 출력
             }
 
             if (mbtiEditText.text.toString().isNullOrBlank()) {

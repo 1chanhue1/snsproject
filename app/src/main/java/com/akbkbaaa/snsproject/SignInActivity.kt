@@ -17,10 +17,8 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        val signIn =
-            findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_in)
-        val signUp =
-            findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_up2)
+        val signIn = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_in)
+        val signUp = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_up2)
 
         val idInputLayout = findViewById<TextInputLayout>(R.id.idInputLayout)
         val pwInputLayout = findViewById<TextInputLayout>(R.id.pwInputLayout)
