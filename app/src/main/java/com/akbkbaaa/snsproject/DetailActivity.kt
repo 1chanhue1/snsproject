@@ -25,9 +25,16 @@ class DetailActivity : AppCompatActivity() {
         val tvUserPost1 = findViewById<TextView>(R.id.tv_post1)
         val tvUserPost2 = findViewById<TextView>(R.id.tv_post2)
 
-        val strData = intent.getStringExtra("dataFromFirstActivity")
+        val strData = intent.getStringExtra("dataFromFirstActivity").toString()
         tvUserId.setText(strData)
 
-        tvUserPost1.text = Database.getPosts(strData.toString()).toString()
+        var detailUser = Database.getPosts(strData)
+
+        var posting1 = Database.getPosts(strData)
+
+        tvUserPost1.text = "${strData}  ${posting1}"
+
+
+
     }
 }
