@@ -1,6 +1,8 @@
 package com.akbkbaaa.snsproject
 
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +18,16 @@ class DetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val tvUserId = findViewById<TextView>(R.id.tv_user_id)
+        val ivUserPhoto1 = findViewById<ImageView>(R.id.iv_post1)
+        val ivUserPhoto2 = findViewById<ImageView>(R.id.iv_post2)
+        val tvUserPost1 = findViewById<TextView>(R.id.tv_post1)
+        val tvUserPost2 = findViewById<TextView>(R.id.tv_post2)
+
+        val strData = intent.getStringExtra("dataFromFirstActivity")
+        tvUserId.setText(strData)
+
+        tvUserPost1.text = Database.getPosts(strData.toString()).toString()
     }
 }
