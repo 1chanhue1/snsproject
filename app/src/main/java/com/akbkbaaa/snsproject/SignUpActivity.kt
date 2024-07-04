@@ -23,6 +23,8 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+//        mbti 추가
+
 //        중복 확인 부분
 //        val check = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_check)
 
