@@ -28,7 +28,7 @@ class MyPageActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_my_page)
 
-        val userId = Intent().getStringExtra("userId")!!
+        val userId = intent.getStringExtra("userId")!!
         init()
         setImage(userId)
         setProfile(userId)
