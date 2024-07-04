@@ -2,14 +2,20 @@ package com.akbkbaaa.snsproject
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class SignUpActivity : AppCompatActivity() {
+
+//    private var isChecked = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,43 +29,58 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        mbti 추가
-
-//        중복 확인 부분
+//        중복 체크 부분
 //        val check = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_check)
 
-//        check.setOnClickListener {  }
+        val signUp = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_up1)
 
-        val signUp1 = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_up1)
+        signUp.setOnClickListener {
 
-        signUp1.setOnClickListener {
+            val nameEditText = findViewById<TextInputEditText>(R.id.nameInputEditText)
+            val idEditText = findViewById<TextInputEditText>(R.id.idInputEditText)
+            val pwEditText = findViewById<TextInputEditText>(R.id.pwInputEditText)
+            val mbtiEditText = findViewById<TextInputEditText>(R.id.mbtiInputEditText)
 
-            val nameEditText = findViewById<EditText>(R.id.editName)
-            val idEditText = findViewById<EditText>(R.id.editId1)
-            val pwEditText = findViewById<EditText>(R.id.editPw1)
-
-            if (nameEditText.text.toString().trim().isEmpty()) {
-                Toast.makeText(this, getString(R.string.toast_signup_name), Toast.LENGTH_SHORT).show()
+            if (nameEditText.text.toString().isNullOrBlank()) {
+                nameEditText.error = "이름을 입력해주세요."
                 return@setOnClickListener
 
-            } else if (idEditText.text.toString().trim().isEmpty()) {
-                Toast.makeText(this, getString(R.string.toast_signup_id), Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-
-            } else if (pwEditText.text.toString().trim().isEmpty()) {
-                Toast.makeText(this, getString(R.string.toast_signup_pw), Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-
-            } else {
-                Toast.makeText(this, getString(R.string.toast_signup_complete), Toast.LENGTH_SHORT).show()
-
-                intent.putExtra("ID", idEditText.text.toString())
-                intent.putExtra("PW", pwEditText.text.toString())
-
-                setResult(RESULT_OK, intent)
-
-                if (!isFinishing) finish()
             }
+
+            if (idEditText.text.toString().isNullOrBlank()) {
+                idEditText.error = "아이디를 입력해주세요."
+                return@setOnClickListener
+
+            }
+
+            if (pwEditText.text.toString().isNullOrBlank()) {
+                pwEditText.error = "비밀번호를 입력해주세요."
+                return@setOnClickListener
+
+//            아이디 중복 체크 부분
+//            } else if() {
+
+            }
+
+            if (mbtiEditText.text.toString().isNullOrBlank()) {
+                pwEditText.error = "mbti를 입력해주세요."
+                return@setOnClickListener
+
+            }
+
+            nameEditText.error = null
+            idEditText.error = null
+            pwEditText.error = null
+            mbtiEditText.error = null
+
+            Toast.makeText(this, getString(R.string.toast_signup_complete), Toast.LENGTH_SHORT).show()
+
+            intent.putExtra("idEditText", idEditText.text.toString())
+            intent.putExtra("pwEditText", pwEditText.text.toString())
+
+            setResult(RESULT_OK, intent)
+
+            if (!isFinishing) finish()
         }
     }
 }
