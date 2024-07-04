@@ -35,7 +35,7 @@ class MyPageActivity : AppCompatActivity() {
 
         logout.setOnClickListener {
             Database.setCurrentUserId("")
-            val intent = Intent(this,LoginActivity::class.java)
+            val intent = Intent(this,SignInActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -60,7 +60,9 @@ class MyPageActivity : AppCompatActivity() {
     private fun setImage(userId:String){
 
         val posts = Database.getPosts(userId)
+
         val photos = mutableListOf<Int>()
+
         posts.forEach {post ->
             post.photos.forEach { photo->
                 photos.add(photo)
@@ -70,6 +72,7 @@ class MyPageActivity : AppCompatActivity() {
         photos.forEachIndexed { index, i ->
             imageViews[index].setImageResource(i)
         }
+
         postCount.setText("게시물 ${posts.size}")
         photoCount.setText("사진 ${photos.size}")
     }
