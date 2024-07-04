@@ -3,25 +3,16 @@
     <string name="detail_post">wefqwefef  Lorem ipsum dolor sit amet consectetur. Massa feugiat et lectus risus quis posuere sollicitudin commodo cursus. Quisque magna odio consectetur malesuada in.</string>
     <string name="input_id">아이디를 입력하세요.</string>
     <string name="input_pw">비밀번호를 입력하세요.</string>
-    <string name="input_id_en">Please enter your ID.</string>
-    <string name="input_pw_en">Please enter your Password.</string>
     <string name="toast_idpwerr">아이디/비밀번호를 입력해주세요.</string>
-    <string name="toast_idpwerr_en">Please enter your ID/PW.</string>
     <string name="toast_signin_success">로그인 성공!</string>
-    <string name="toast_signin_success_en">Sign in Successfully!</string>
     <string name="password">Password</string>
     <string name="id">ID</string>
     <string name="name">Name</string>
     <string name="input_name">이름을 입력하세요.</string>
-    <string name="input_name_en">Please enter your name.</string>
     <string name="toast_signup_name">이름을 입력해주세요.</string>
-    <string name="toast_signup_name_en">Please enter your name.</string>
     <string name="toast_signup_id">아이디를 입력해주세요.</string>
-    <string name="toast_signup_id_en">Please enter your ID.</string>
     <string name="toast_signup_pw">비밀번호를 입력해주세요.</string>
-    <string name="toast_signup_pw_en">Please enter your Password.</string>
     <string name="toast_signup_complete">회원가입 완료</string>
-    <string name="toast_signup_complete_en">Sign up successfully!</string>
     <string name="toast_id_exist">이미 존재하는 아이디입니다.</string>
-    <string name="toast_id_exist_en">ID exists already.</string>
+    <string name="input_mbti">mbti를 입력해주세요.</string>
 </resources>

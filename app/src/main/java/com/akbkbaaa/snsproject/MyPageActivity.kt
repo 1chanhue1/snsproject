@@ -1,9 +1,11 @@
 package com.akbkbaaa.snsproject
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
@@ -26,9 +28,7 @@ class MyPageActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_my_page)
 
-
-
-        val userId = intent.getStringExtra("userId")!!
+        val userId = Intent().getStringExtra("userId")!!
         init()
         setImage(userId)
         setProfile(userId)
