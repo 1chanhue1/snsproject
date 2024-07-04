@@ -15,7 +15,7 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        val signIn = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_signin)
+        val signIn = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_in)
 
         val idEditText = findViewById<EditText>(R.id.editId2)
         val pwEditText = findViewById<EditText>(R.id.editPw)
@@ -38,7 +38,7 @@ class SignInActivity : AppCompatActivity() {
             }
         }
 
-        val signUp = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_signup)
+        val signUp = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_up2)
 
         signUp.setOnClickListener {
 
@@ -49,12 +49,13 @@ class SignInActivity : AppCompatActivity() {
         resultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == RESULT_OK) {
-                    val ID = result.data?.getStringExtra("ID") ?: ""
-                    val PW = result.data?.getStringExtra("PW") ?: ""
+                    val id = result.data?.getStringExtra("ID") ?: ""
+                    val pw = result.data?.getStringExtra("PW") ?: ""
 
-                    idEditText.setText(ID)
-                    pwEditText.setText(PW)
+                    idEditText.setText(id)
+                    pwEditText.setText(pw)
                 }
             }
     }
 }
+// TextInputLayout 구현
