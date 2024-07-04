@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+       enableEdgeToEdge()
         setContentView(R.layout.activity_detail)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -25,14 +25,9 @@ class DetailActivity : AppCompatActivity() {
         val tvUserPost1 = findViewById<TextView>(R.id.tv_post1)
         val tvUserPost2 = findViewById<TextView>(R.id.tv_post2)
 
-        val strData = intent.getStringExtra("dataFromFirstActivity").toString()
-        tvUserId.setText(strData)
 
-        var detailUser = Database.getPosts(strData)
+        val userId=intent.getStringExtra("userId")
 
-        var posting1 = Database.getPosts(strData)
-
-        tvUserPost1.text = "${strData}  ${posting1}"
 
 
 
