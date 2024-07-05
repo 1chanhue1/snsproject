@@ -1,6 +1,8 @@
 package com.akbkbaaa.snsproject
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -28,19 +30,21 @@ class DetailActivity : AppCompatActivity() {
         val tvUserPost1 = findViewById<TextView>(R.id.tv_post1)
         val tvUserPost2 = findViewById<TextView>(R.id.tv_post2)
 
-        var userPost = Database.getPosts("1chanhue1")
-        var userInfo = Database.getUserInfo("1chanhue1")
+        val userGetId = intent.getStringExtra("userId")
 
-        var userPhoto = mutableListOf<Int>()
-        var userContent = mutableListOf<String>()
+        val userPost = Database.getPosts(userGetId.toString())
+        val userInfo = Database.getUserInfo(userGetId.toString())
 
-        userPost.forEach { post -> userContent.add(post.content)}
+        val userPhoto = mutableListOf<Int>()
+        val userContent = mutableListOf<String>()
 
-        tvUserPost1.setText("1chanhue1  ${userContent[0]}")
-        tvUserPost2.setText("1chanhue1  ${userContent[1]}")
+        userPost.forEach { post -> userContent.add(post.content) }
 
-        userPost.forEach {post ->
-            post.photos.forEach { photo->
+        tvUserPost1.setText("${userGetId}:  ${userContent[0]}")
+        tvUserPost2.setText("${userGetId}:  ${userContent[1]}")
+
+        userPost.forEach { post ->
+            post.photos.forEach { photo ->
                 userPhoto.add(photo)
             }
         }
@@ -57,7 +61,12 @@ class DetailActivity : AppCompatActivity() {
         tvUserMbti.setText("$userMbti")
         tvUserSpec.setText("$userSpec")
 
-        //val userId=intent.getStringExtra("userId")
+        val btnBack = findViewById<ImageView>(R.id.iv_dv_logo)
+
+        btnBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }

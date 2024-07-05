@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         val dyaossProfile = findViewById<ImageView>(R.id.dyaoss)
         dyaossProfile.setOnClickListener {
             startDetailActivity("Dyaoss")
+
         }
 
         val postContainer = findViewById<LinearLayout>(R.id.postContainer)
