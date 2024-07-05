@@ -32,8 +32,6 @@ class DetailActivity : AppCompatActivity() {
         val userInfo = Database.getUserInfo(userGetId.toString())
 
 
-
-
         var userId = userInfo?.userId
         var userName = userInfo?.userName
         var userMbti = userInfo?.userMbti
@@ -61,6 +59,9 @@ class DetailActivity : AppCompatActivity() {
             val postImageView = postView.findViewById<androidx.viewpager.widget.ViewPager>(R.id.viewPager)
             val postContentView = postView.findViewById<TextView>(R.id.postContent)
             val dotsLayout = postView.findViewById<LinearLayout>(R.id.dotsLayout)
+
+
+
 
             userNameView.text = post.userId
             postContentView.text = post.content
