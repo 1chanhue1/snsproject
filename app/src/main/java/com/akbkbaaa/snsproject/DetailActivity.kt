@@ -20,6 +20,7 @@ import androidx.core.view.WindowInsetsCompat
 class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         enableEdgeToEdge()
         setContentView(R.layout.activity_detail)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -59,6 +60,7 @@ class DetailActivity : AppCompatActivity() {
 
         btnBack.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
 
 
