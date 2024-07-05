@@ -45,8 +45,7 @@ class DetailActivity : AppCompatActivity() {
         val btnBack = findViewById<ImageView>(R.id.iv_dv_logo)
 
         btnBack.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
 
