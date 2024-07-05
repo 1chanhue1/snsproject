@@ -4,9 +4,6 @@
     <string name="input_pw">비밀번호를 입력하세요.</string>
     <string name="toast_idpwerr">아이디/비밀번호를 입력해주세요.</string>
     <string name="toast_signin_success">로그인 성공!</string>
-    <string name="password">Password</string>
-    <string name="id">ID</string>
-    <string name="name">Name</string>
     <string name="input_name">이름을 입력하세요.</string>
     <string name="toast_signup_name">이름을 입력해주세요.</string>
     <string name="toast_signup_id">아이디를 입력해주세요.</string>

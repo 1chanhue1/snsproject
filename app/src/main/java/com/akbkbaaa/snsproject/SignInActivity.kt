@@ -2,9 +2,7 @@ package com.akbkbaaa.snsproject
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -28,7 +26,7 @@ class SignInActivity : AppCompatActivity() {
         val idInputEditText = findViewById<EditText>(R.id.idInputEditText)
         val pwInputEditText = findViewById<EditText>(R.id.pwInputEditText)
 
-//        롣그인 버튼 눌렀을 때 동작 부분
+//        로그인 버튼 눌렀을 때 동작 부분
 
         signIn.setOnClickListener {
 
@@ -56,6 +54,7 @@ class SignInActivity : AppCompatActivity() {
                 Database.setCurrentUserId(idInputText)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_up_ggilmon, R.anim.slide_none_ggilmon)
                 finish()
 
             } else {
@@ -69,6 +68,7 @@ class SignInActivity : AppCompatActivity() {
 
             val intent = Intent(this, SignUpActivity::class.java)
             resultLauncher.launch(intent)
+            overridePendingTransition(R.anim.slide_up_ggilmon, R.anim.slide_none_ggilmon)
         }
 
         resultLauncher =
