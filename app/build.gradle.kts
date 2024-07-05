@@ -36,6 +36,8 @@ android {
 }
 
 dependencies {
+    implementation ("androidx.viewpager2:viewpager2:1.0.0") // 뷰 페이저 사용을 위한 의존성 추가
+    implementation ("com.google.android.material:material:1.3.0")
 
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
