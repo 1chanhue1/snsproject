@@ -86,11 +86,12 @@ class SignUpActivity : AppCompatActivity() {
             pwEditText.error = null
             mbtiEditText.error = null
 
-//            회원 가입 정보 넘겨주기?
+            val userName = nameEditText.text.toString()
+            val userPw = pwEditText.text.toString()
+            val userMbti = mbtiEditText.text.toString()
 
-//            val addUser = Database.addUserInfo(UserInfo(userId, userName = "", userPw = "", userProfile = null ,userMbti = ""))
-//
-//            Database.addUserInfo(addUser)
+            val userInfo = UserInfo(userId, userName, userPw, null, userMbti)
+            Database.addUserInfo(userInfo)
 
             Toast.makeText(this, getString(R.string.toast_signup_complete), Toast.LENGTH_SHORT).show()
 
