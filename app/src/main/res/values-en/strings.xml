@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">english</string>
+    <string name="detail_post">english</string>
+    <string name="input_id">english</string>
+    <string name="input_pw">english</string>
+    <string name="toast_idpwerr">english</string>
+    <string name="toast_signin_success">english</string>
+    <string name="password">Password</string>
+    <string name="id">ID</string>
+    <string name="name">Name</string>
+    <string name="input_name">이름을 입력하세요.</string>
+    <string name="toast_signup_name">이름을 입력해주세요.</string>
+    <string name="toast_signup_id">아이디를 입력해주세요.</string>
+    <string name="toast_signup_pw">비밀번호를 입력해주세요.</string>
+    <string name="toast_signup_complete">회원가입 완료</string>
+    <string name="toast_id_exist">이미 존재하는 아이디입니다.</string>
+    <string name="input_mbti">mbti를 입력해주세요.</string>
+</resources>
