@@ -76,7 +76,7 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             if (mbtiEditText.text.toString().isBlank()) {
-                pwEditText.error = "mbti를 입력해주세요."
+                mbtiEditText.error = "mbti를 입력해주세요."
                 return@setOnClickListener
 
             }
