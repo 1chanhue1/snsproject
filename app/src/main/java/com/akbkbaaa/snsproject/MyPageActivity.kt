@@ -88,7 +88,6 @@ class MyPageActivity : AppCompatActivity() {
                 .into(imageViews[index])
         }
 
-
         postCount.setText("${getString(R.string.myhPage_photo)} ${photos.size}")
     }
     private fun setProfile(userId:String){
