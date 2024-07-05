@@ -15,4 +15,6 @@
     <string name="toast_id_exist">이미 존재하는 아이디입니다.</string>
     <string name="input_mbti">mbti를 입력해주세요.</string>
     <string name="mypage">마이페이지</string>
+    <string name="myhPage_photo">사진</string>
+    <string name="myhPage_logout">로그아웃</string>
 </resources>

@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">english</string>
-    <string name="detail_post">english</string>
     <string name="input_id">english</string>
     <string name="input_pw">english</string>
     <string name="toast_idpwerr">english</string>
@@ -16,5 +15,6 @@
     <string name="toast_id_exist">이미 존재하는 아이디입니다.</string>
     <string name="input_mbti">mbti를 입력해주세요.</string>
     <string name="mypage">mypage</string>
-
+    <string name="myhPage_photo">photo</string>
+    <string name="myhPage_logout">logout</string>
 </resources>

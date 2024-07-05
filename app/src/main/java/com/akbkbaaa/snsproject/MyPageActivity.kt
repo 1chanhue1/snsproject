@@ -37,8 +37,8 @@ class MyPageActivity : AppCompatActivity() {
         setProfile(userId)
 
         myPageLogo.setOnClickListener {
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             finish()
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         }
 
         logout.setOnClickListener {
@@ -88,7 +88,8 @@ class MyPageActivity : AppCompatActivity() {
                 .into(imageViews[index])
         }
 
-        postCount.setText("사진 ${photos.size}")
+
+        postCount.setText("${getString(R.string.myhPage_photo)} ${photos.size}")
     }
     private fun setProfile(userId:String){
         val userInfo = Database.getUserInfo(userId)!!
@@ -100,5 +101,10 @@ class MyPageActivity : AppCompatActivity() {
                 .centerCrop()
                 .into(profile)
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
     }
 }
