@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val sampleid= findViewById<ImageView>(R.id.sample_id)
         sampleid.setOnClickListener {
             val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("userId", "1chanhue1")
+            intent.putExtra("userId", "Dyaoss")
             startActivity(intent)
         }
 
