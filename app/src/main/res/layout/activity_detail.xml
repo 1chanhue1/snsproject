@@ -65,6 +65,16 @@
 
     </LinearLayout>
 
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/myPage_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="5dp"
+        app:dividerColor="@color/deep_blue"
+        app:layout_constraintTop_toBottomOf="@id/iv_user_profile_photo"/>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"

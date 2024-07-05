@@ -35,8 +35,9 @@ object Database {
 
         Post("kim4152", listOf(R.drawable.kjh_11, R.drawable.kjh_12), "설악산!! 좋았지만 다시는 가지 않을거야"),
         Post("kim4152", listOf(R.drawable.kjh_11, R.drawable.kjh_12), "복붙"),
-        Post("Dyaoss", listOf(R.drawable.kdh_11, R.drawable.kdh_12 ), "한화 화이팅"),
-        Post("Dyaoss", listOf(R.drawable.kdh_11, R.drawable.kdh_12 ), "복붙"),
+
+        Post("Dyaoss", listOf(R.drawable.kdh_11, R.drawable.kdh_12 ), "오늘도 야구장! 한화 화이팅"),
+        Post("Dyaoss", listOf(R.drawable.kdh_21, R.drawable.kdh_22 ), "하와이 또가고 싶다."),
 
     )
     fun getAllPosts():List<Post>{

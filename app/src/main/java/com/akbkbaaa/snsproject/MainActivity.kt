@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             setProfileImage(userImageView, post.userId)
 
             userNameView.text = post.userId
-            postContentView.text = post.content
+            postContentView.text =  "${userNameView.text}: ${post.content}"
 
 
             val adapter = ViewPager(this, post.photos)
