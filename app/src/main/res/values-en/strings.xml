@@ -10,7 +10,8 @@
     <string name="toast_signup_pw">Please enter your Password.</string>
     <string name="toast_signup_complete">Sign up successfully!</string>
     <string name="toast_id_exist">ID exists already.</string>
-    <string name="input_mbti">Please enter your mbti.</string>
+    <string name="input_mbti">Please enter your mbti.</string>=
     <string name="mypage">mypage</string>
-
+    <string name="myhPage_photo">photo</string>
+    <string name="myhPage_logout">logout</string>
 </resources>
