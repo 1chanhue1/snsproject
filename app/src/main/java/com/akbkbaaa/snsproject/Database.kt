@@ -27,7 +27,7 @@ object Database {
 
     //게시글 정보
     private val posts: List<Post> = listOf(
-        Post("1chanhue1", listOf(R.drawable.kch_11, R.drawable.kch_12), "뉴진스 콘서트 다녀옴"),
+        Post("1chanhue1", listOf(R.drawable.kch1, R.drawable.kch2), "풍경 사진"),
         Post("1chanhue1", listOf(R.drawable.kch_21, R.drawable.kch_22), "맛집 추천"),
 
         Post("ggilggilmonster", listOf(R.drawable.ggilmon1, R.drawable.ggilmon2), "Posty 💥💥"),
