@@ -92,5 +92,11 @@ class MyPageActivity : AppCompatActivity() {
         val userInfo = Database.getUserInfo(userId)!!
         if(userInfo.userProfile!=null) profile.setImageResource(userInfo.userProfile)
         name.text = userInfo.userName
+        userInfo.userProfile?.let {
+            Glide.with(this)
+                .load(it)
+                .centerCrop()
+                .into(profile)
+        }
     }
 }
