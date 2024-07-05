@@ -12,20 +12,17 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_dv_title"
+        app:layout_constraintTop_toBottomOf="@+id/iv_dv_logo"
         app:srcCompat="@drawable/empty_profile" />
 
-    <TextView
-        android:id="@+id/tv_dv_title"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/iv_dv_logo"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="30dp"
-        android:text="Detail"
-        android:textSize="26sp"
-        android:textStyle="bold"
+        android:src="@drawable/app_logo"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,7 +60,7 @@
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/tv_user_info"
+            android:id="@+id/tv_user_spec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
@@ -73,63 +70,51 @@
         android:layout_width="match_parent"
         android:layout_height="450dp"
         android:layout_marginTop="30dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@+id/iv_user_profile_photo">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="30dp"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp">
 
             <ImageView
                 android:id="@+id/iv_post1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/jdh_11"
+                android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
-                android:layout_gravity="center"/>
+                android:src="@drawable/jdh_11" />
 
             <TextView
                 android:id="@+id/tv_post1"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginBottom="10dp"
-                android:textSize="11sp"
                 android:layout_gravity="left"
-                />
+                android:layout_marginBottom="10dp"
+                android:textSize="11sp" />
+
 
             <ImageView
                 android:id="@+id/iv_post2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/jdh_12"
+                android:layout_gravity="center"
                 android:layout_marginBottom="5dp"
-                android:layout_gravity="center"/>
+                android:src="@drawable/jdh_12" />
 
             <TextView
                 android:id="@+id/tv_post2"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:textSize="11sp"
-                android:layout_gravity="left"
-                android:layout_marginBottom="10dp"
-                android:text="@string/detail_post" />
-
-            <ImageView
-                android:id="@+id/iv_post3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/kch_11"
-                android:layout_marginBottom="5dp"
-                android:layout_gravity="center"/>
+                android:textSize="11sp" />
 
             <TextView
+                android:id="@+id/tv_post3"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:textSize="11sp"
-                android:layout_gravity="left"
-                android:text="@string/detail_post"/>
-
+                android:textSize="11sp" />
 
         </LinearLayout>
     </ScrollView>

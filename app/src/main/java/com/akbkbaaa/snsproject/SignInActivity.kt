@@ -17,10 +17,8 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        val signIn =
-            findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_in)
-        val signUp =
-            findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_up2)
+        val signIn = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_in)
+        val signUp = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_up2)
 
         val idInputLayout = findViewById<TextInputLayout>(R.id.idInputLayout)
         val pwInputLayout = findViewById<TextInputLayout>(R.id.pwInputLayout)
@@ -48,12 +46,19 @@ class SignInActivity : AppCompatActivity() {
             idInputLayout.error = null
             pwInputLayout.error = null
 
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            Database.setCurrentUserId(idInputText)
+            val userInfo = Database.getUserInfo(idInputText)
+
+            if (userInfo != null && userInfo.userPw == pwInputText) {
+                Database.setCurrentUserId(idInputText)
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+
+            } else {
+                pwInputLayout.error = "아이디 또는 비밀번호가 올바르지 않습니다."
+            }
         }
 
-//        로그인 회원 정보에 저장된 거만 예외처리로
 
         signUp.setOnClickListener {
 

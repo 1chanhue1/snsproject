@@ -14,8 +14,6 @@ import com.google.android.material.textfield.TextInputLayout
 
 class SignUpActivity : AppCompatActivity() {
 
-//    private var isChecked = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,17 +27,28 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        중복 체크 부분
-//        val check = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_check)
-
         val signUp = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_up1)
+        val check = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_check)
+
+        val nameEditText = findViewById<TextInputEditText>(R.id.nameInputEditText)
+        val idEditText = findViewById<TextInputEditText>(R.id.idInputEditText)
+        val pwEditText = findViewById<TextInputEditText>(R.id.pwInputEditText)
+        val mbtiEditText = findViewById<TextInputEditText>(R.id.mbtiInputEditText)
+
+        check.setOnClickListener {
+
+            val userId = idEditText.text.toString()
+
+            if (Database.getUserInfo(userId) != null) {
+                idEditText.error = "이미 존재하는 아이디입니다."
+
+            } else {
+                idEditText.error = null
+                Toast.makeText(this, "사용 가능한 아이디입니다.", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         signUp.setOnClickListener {
-
-            val nameEditText = findViewById<TextInputEditText>(R.id.nameInputEditText)
-            val idEditText = findViewById<TextInputEditText>(R.id.idInputEditText)
-            val pwEditText = findViewById<TextInputEditText>(R.id.pwInputEditText)
-            val mbtiEditText = findViewById<TextInputEditText>(R.id.mbtiInputEditText)
 
             if (nameEditText.text.toString().isNullOrBlank()) {
                 nameEditText.error = "이름을 입력해주세요."
@@ -57,9 +66,6 @@ class SignUpActivity : AppCompatActivity() {
                 pwEditText.error = "비밀번호를 입력해주세요."
                 return@setOnClickListener
 
-//            아이디 중복 체크 부분
-//            } else if() {
-
             }
 
             if (mbtiEditText.text.toString().isNullOrBlank()) {
@@ -68,10 +74,23 @@ class SignUpActivity : AppCompatActivity() {
 
             }
 
+            val userId = idEditText.text.toString()
+
+            if (Database.getUserInfo(userId) != null) {
+                idEditText.error = "이미 존재하는 아이디입니다."
+                return@setOnClickListener
+            }
+
             nameEditText.error = null
             idEditText.error = null
             pwEditText.error = null
             mbtiEditText.error = null
+
+//            회원 가입 정보 넘겨주기?
+
+//            val addUser = Database.addUserInfo(UserInfo(userId, userName = "", userPw = "", userProfile = null ,userMbti = ""))
+//
+//            Database.addUserInfo(addUser)
 
             Toast.makeText(this, getString(R.string.toast_signup_complete), Toast.LENGTH_SHORT).show()
 
