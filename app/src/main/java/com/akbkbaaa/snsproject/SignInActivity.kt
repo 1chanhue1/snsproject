@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,7 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_sign_in)
 
         val signIn = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_in)
@@ -25,6 +27,8 @@ class SignInActivity : AppCompatActivity() {
 
         val idInputEditText = findViewById<EditText>(R.id.idInputEditText)
         val pwInputEditText = findViewById<EditText>(R.id.pwInputEditText)
+
+//        롣그인 버튼 눌렀을 때 동작 부분
 
         signIn.setOnClickListener {
 
@@ -59,6 +63,7 @@ class SignInActivity : AppCompatActivity() {
             }
         }
 
+//        회원 가입 버튼 눌렀을 때 동작 부분
 
         signUp.setOnClickListener {
 

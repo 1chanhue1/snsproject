@@ -30,8 +30,8 @@ object Database {
         Post("1chanhue1", listOf(R.drawable.kch_11, R.drawable.kch_12), "뉴진스 콘서트 다녀옴"),
         Post("1chanhue1", listOf(R.drawable.kch_21, R.drawable.kch_22), "맛집 추천"),
 
-        Post("ggilggilmonster", listOf(R.drawable.jdh_11, R.drawable.jdh_12), "이거 사주세요"),
-        Post("ggilggilmonster", listOf(R.drawable.jdh_21, R.drawable.jdh_22), "우리형을 소개합니다"),
+        Post("ggilggilmonster", listOf(R.drawable.ggilmon1, R.drawable.ggilmon2), "Posty 💥💥"),
+        Post("ggilggilmonster", listOf(R.drawable.ggilmon3, R.drawable.ggilmon4), "Oh my Bruno😭😭"),
 
         Post("kim4152", listOf(R.drawable.kjh_11, R.drawable.kjh_12), "설악산!! 좋았지만 다시는 가지 않을거야"),
         Post("kim4152", listOf(R.drawable.kjh_11, R.drawable.kjh_12), "복붙"),
