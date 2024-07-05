@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/iv_icon"
-        android:layout_width="155dp"
-        android:layout_height="155dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="80dp"
         android:src="@drawable/akbkbaaa_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:hint="@string/input_id"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/idInputEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -133,9 +134,10 @@
 
     <ImageView
         android:id="@+id/iv_logo"
-        android:layout_width="110dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="6dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.3"
+        android:layout_margin="10dp"
         android:src="@drawable/app_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
