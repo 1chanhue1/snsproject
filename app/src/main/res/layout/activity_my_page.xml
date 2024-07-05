@@ -7,12 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".MyPageActivity">
 
-    <TextView
+    <ImageView
         android:id="@+id/myPage_logo"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="AKBKBAAAA"
-        android:textSize="25dp"
+        app:layout_constraintWidth_percent="0.3"
+        android:src="@drawable/app_logo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="10dp"/>
@@ -24,11 +24,12 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
         app:layout_constraintTop_toBottomOf="@id/myPage_logo">
+
         <ImageView
             android:id="@+id/myPage_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/empty_profile"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -41,6 +42,7 @@
             android:layout_marginLeft="20dp"
             app:layout_constraintStart_toEndOf="@id/myPage_profile"
             app:layout_constraintTop_toTopOf="parent"/>
+
 
         <TextView
             android:id="@+id/myPage_logout"
@@ -90,7 +92,7 @@
         android:layout_marginHorizontal="5dp"
         android:layout_marginTop="20dp"
         app:constraint_referenced_ids="my_page_img1,my_page_img2,my_page_img3,my_page_img4"
-        app:flow_horizontalGap="5dp"
+        app:flow_horizontalGap="1dp"
         app:flow_maxElementsWrap="3"
         app:flow_wrapMode="aligned"
         app:layout_constraintBottom_toBottomOf="parent"

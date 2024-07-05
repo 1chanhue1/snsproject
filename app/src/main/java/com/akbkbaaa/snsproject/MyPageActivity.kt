@@ -8,12 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 
 class MyPageActivity : AppCompatActivity() {
+    private lateinit var myPageLogo: ImageView
+
     private lateinit var profile: ImageView
-    private lateinit var name: EditText
-    private lateinit var postCount: EditText
-    private lateinit var photoCount: EditText
+    private lateinit var name: TextView
+    private lateinit var postCount: TextView
 
     private lateinit var imageViews: List<ImageView>
     private lateinit var myPageImage1: ImageView
@@ -33,6 +35,12 @@ class MyPageActivity : AppCompatActivity() {
         setImage(userId)
         setProfile(userId)
 
+        myPageLogo.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         logout.setOnClickListener {
             Database.setCurrentUserId("")
             val intent = Intent(this,SignInActivity::class.java)
@@ -42,10 +50,11 @@ class MyPageActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        myPageLogo = findViewById(R.id.myPage_logo)
+
         profile = findViewById(R.id.myPage_profile)
         name = findViewById(R.id.myPage_profile_name)
         postCount = findViewById(R.id.myPage_profile_post_count)
-        photoCount = findViewById(R.id.myPage_profile_photo_count)
 
         myPageImage1 = findViewById(R.id.my_page_img1)
         myPageImage2 = findViewById(R.id.my_page_img2)
@@ -70,15 +79,17 @@ class MyPageActivity : AppCompatActivity() {
         }
 
         photos.forEachIndexed { index, i ->
-            imageViews[index].setImageResource(i)
+            Glide.with(this)
+                .load(i)
+                .centerCrop()
+                .into(imageViews[index])
         }
 
-        postCount.setText("게시물 ${posts.size}")
-        photoCount.setText("사진 ${photos.size}")
+        postCount.setText("사진 ${photos.size}")
     }
     private fun setProfile(userId:String){
         val userInfo = Database.getUserInfo(userId)!!
         if(userInfo.userProfile!=null) profile.setImageResource(userInfo.userProfile)
-        name.setText( userInfo.userName)
+        name.text = userInfo.userName
     }
 }
