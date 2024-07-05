@@ -20,9 +20,9 @@
         android:id="@+id/iv_dv_logo"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/app_logo"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/app_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -68,55 +68,17 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="0dp"
         android:layout_marginTop="30dp"
         android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_user_profile_photo">
 
         <LinearLayout
+            android:id="@+id/postContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="15dp">
-
-            <ImageView
-                android:id="@+id/iv_post1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/jdh_11" />
-
-            <TextView
-                android:id="@+id/tv_post1"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_gravity="left"
-                android:layout_marginBottom="10dp"
-                android:textSize="11sp" />
-
-
-            <ImageView
-                android:id="@+id/iv_post2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/jdh_12" />
-
-            <TextView
-                android:id="@+id/tv_post2"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="11sp" />
-
-            <TextView
-                android:id="@+id/tv_post3"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="11sp" />
-
-        </LinearLayout>
+            android:orientation="vertical"></LinearLayout>
     </ScrollView>
 
 
