@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
             val userId = Database.getCurrentUserId()
             intent.putExtra("userId", userId)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+
         }
 
         val chanhueProfile = findViewById<ImageView>(R.id.chanhue)
@@ -65,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             setProfileImage(userImageView, post.userId)
 
             userNameView.text = post.userId
-            postContentView.text = post.content
+            postContentView.text =  "${userNameView.text}: ${post.content}"
 
 
             val adapter = ViewPager(this, post.photos)
@@ -82,6 +84,8 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, DetailActivity::class.java)
         intent.putExtra("userId", userId)
         startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+
     }
 
     private fun setProfileImage(imageView: ImageView, userId: String) {

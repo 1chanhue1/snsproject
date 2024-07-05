@@ -27,17 +27,19 @@ object Database {
 
     //게시글 정보
     private val posts: List<Post> = listOf(
-        Post("1chanhue1", listOf(R.drawable.kch_11, R.drawable.kch_12), "뉴진스 콘서트 다녀옴"),
+        Post("1chanhue1", listOf(R.drawable.kch1, R.drawable.kch2), "풍경 사진"),
         Post("1chanhue1", listOf(R.drawable.kch_21, R.drawable.kch_22), "맛집 추천"),
 
         Post("ggilggilmonster", listOf(R.drawable.ggilmon1, R.drawable.ggilmon2), "Posty 💥💥"),
         Post("ggilggilmonster", listOf(R.drawable.ggilmon3, R.drawable.ggilmon4), "Oh my Bruno😭😭"),
 
+
         Post("kim4152", listOf(R.drawable.kjh_11, R.drawable.kjh_12), "설악산 갔다 옴... 지리산 딱 기다려"),
         Post("kim4152", listOf(R.drawable.kjh_21, R.drawable.kjh_22), "귀요미들..(2명만)"),
 
-        Post("Dyaoss", listOf(R.drawable.kdh_11, R.drawable.kdh_12 ), "한화 화이팅"),
-        Post("Dyaoss", listOf(R.drawable.kdh_11, R.drawable.kdh_12 ), "복붙"),
+
+        Post("Dyaoss", listOf(R.drawable.kdh_11, R.drawable.kdh_12 ), "오늘도 야구장! 한화 화이팅"),
+        Post("Dyaoss", listOf(R.drawable.kdh_21, R.drawable.kdh_22 ), "하와이 또가고 싶다."),
 
     )
     fun getAllPosts():List<Post>{

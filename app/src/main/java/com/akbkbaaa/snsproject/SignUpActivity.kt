@@ -27,6 +27,7 @@ class SignUpActivity : AppCompatActivity() {
 
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_down_ggilmon, R.anim.slide_none_ggilmon)
         }
 
         val signUp = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.btn_sign_up1)
@@ -75,7 +76,7 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             if (mbtiEditText.text.toString().isBlank()) {
-                pwEditText.error = "mbti를 입력해주세요."
+                mbtiEditText.error = "mbti를 입력해주세요."
                 return@setOnClickListener
 
             }
@@ -108,7 +109,13 @@ class SignUpActivity : AppCompatActivity() {
 
             setResult(RESULT_OK, intent)
 
-            if (!isFinishing) finish()
+            if (!isFinishing) {
+                finish()
+            }
         }
     }
+    override fun onBackPressed() {
+        super.onBackPressed()
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
 }
