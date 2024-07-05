@@ -1,7 +1,12 @@
 package com.akbkbaaa.snsproject
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
 import android.view.LayoutInflater
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -27,18 +32,28 @@ class DetailActivity : AppCompatActivity() {
         val tvUsername = findViewById<TextView>(R.id.tv_user_name)
         val tvUserMbti = findViewById<TextView>(R.id.tv_user_mbti)
 
-        val userGetId = intent.getStringExtra("userId")
+        val ivUserProfilePhoto = findViewById<ImageView>(R.id.iv_user_profile_photo)
 
+
+        val userGetId = intent.getStringExtra("userId")
         val userInfo = Database.getUserInfo(userGetId.toString())
 
+        // 데이터 베이스에 저장된 프로필 사진 가져오기
+        val userProfilePhoto = Database.getUserInfo(userGetId.toString())?.userProfile
+        if (userProfilePhoto != null) {
+            ivUserProfilePhoto.setImageResource(userProfilePhoto)
+        }else{
+            ivUserProfilePhoto.setImageResource(R.drawable.sample_image)
+        }
 
-        var userId = userInfo?.userId
-        var userName = userInfo?.userName
-        var userMbti = userInfo?.userMbti
+        val userId = userInfo?.userId
+        val userName = userInfo?.userName
+        val userMbti = userInfo?.userMbti
 
         tvUserId.setText("$userId")
         tvUsername.setText("$userName")
         tvUserMbti.setText("$userMbti")
+
 
         val btnBack = findViewById<ImageView>(R.id.iv_dv_logo)
 
@@ -52,18 +67,26 @@ class DetailActivity : AppCompatActivity() {
         val posts = Database.getPosts(userGetId.toString()) //아이디 가져오기
 
         for (post in posts) {
-            val postView = LayoutInflater.from(this).inflate(R.layout.item_feed, postContainer, false)
+            val postView =
+                LayoutInflater.from(this).inflate(R.layout.item_feed, postContainer, false)
 
             val userNameView = postView.findViewById<TextView>(R.id.username)
-            val postImageView = postView.findViewById<androidx.viewpager.widget.ViewPager>(R.id.viewPager)
+            val postImageView =
+                postView.findViewById<androidx.viewpager.widget.ViewPager>(R.id.viewPager)
             val postContentView = postView.findViewById<TextView>(R.id.postContent)
             val dotsLayout = postView.findViewById<LinearLayout>(R.id.dotsLayout)
 
 
-
+            val userImageView = postView.findViewById<ImageView>(R.id.userImage) // userImage 추가
+// 사용자 프로필 이미지 설정
+            val userInfo = Database.getUserInfo(post.userId)
+            userInfo?.userProfile?.let {
+                userImageView.setImageResource(it)
+            } ?: userImageView.setImageResource(R.drawable.sample_image) // 없으면 기본이미지로
 
             userNameView.text = post.userId
-            postContentView.text = post.content
+            postContentView.text = "${userNameView.text}: ${post.content}"
+
 
             val adapter = ViewPager(this, post.photos)
             postImageView.adapter = adapter
@@ -75,6 +98,7 @@ class DetailActivity : AppCompatActivity() {
             postContainer.addView(postView)
         }
     }
+
     private fun addDots(dotsLayout: LinearLayout, count: Int) {
         val dots = arrayOfNulls<ImageView>(count)
 
@@ -92,9 +116,19 @@ class DetailActivity : AppCompatActivity() {
 
         dots[0]?.setImageResource(R.drawable.dot_active)
     }
-    private fun updateDotsOnPageChange(viewPager: androidx.viewpager.widget.ViewPager, dotsLayout: LinearLayout) {
-        viewPager.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.OnPageChangeListener {
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+
+    private fun updateDotsOnPageChange(
+        viewPager: androidx.viewpager.widget.ViewPager,
+        dotsLayout: LinearLayout
+    ) {
+        viewPager.addOnPageChangeListener(object :
+            androidx.viewpager.widget.ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
 
             override fun onPageSelected(position: Int) {
                 updateDots(dotsLayout, position)
@@ -103,6 +137,7 @@ class DetailActivity : AppCompatActivity() {
             override fun onPageScrollStateChanged(state: Int) {}
         })
     }
+
     private fun updateDots(dotsLayout: LinearLayout, currentPage: Int) {
         val childCount = dotsLayout.childCount
         for (i in 0 until childCount) {
@@ -110,5 +145,6 @@ class DetailActivity : AppCompatActivity() {
             dot.setImageResource(if (i == currentPage) R.drawable.dot_active else R.drawable.dot_inactive)
         }
     }
+
 
 }
