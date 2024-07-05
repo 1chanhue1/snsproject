@@ -3,10 +3,10 @@ package com.akbkbaaa.snsproject
 object Database {
     //회원가입 한 유저 정보
     private val userInfos: MutableList<UserInfo> = mutableListOf(
-        UserInfo("1chanhue1", "김찬휘", "1234",null,"ISFP"),
-        UserInfo("ggilggilmonster", "정용찬", "1234",null,"INFJ"),
-        UserInfo("kim4152", "김정호", "1234",null,"ISFJ"),
-        UserInfo("Dyaoss", "김대현", "1234",null,"ISFP"),
+        UserInfo("1chanhue1", "김찬휘", "1234",R.drawable.img,"ISFP"),
+        UserInfo("ggilggilmonster", "정용찬", "1234",R.drawable.img3,"INFJ"),
+        UserInfo("kim4152", "김정호", "1234",R.drawable.img4,"ISFJ"),
+        UserInfo("Dyaoss", "김대현", "1234",R.drawable.img2,"ISFP"),
     )
     fun getUserInfo(userId: String): UserInfo? {
         return userInfos.find { it.userId == userId } //결과값이 없으면 null 반환
@@ -45,6 +45,7 @@ object Database {
     fun getPosts(userId:String):List<Post>{
         return posts.filter { it.userId == userId } //결과값이 없으면 빈 리스트 반환: []
     }
+
 
 }
 

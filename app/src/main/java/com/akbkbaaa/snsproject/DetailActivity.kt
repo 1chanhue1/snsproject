@@ -76,6 +76,7 @@ class DetailActivity : AppCompatActivity() {
             val postContentView = postView.findViewById<TextView>(R.id.postContent)
             val dotsLayout = postView.findViewById<LinearLayout>(R.id.dotsLayout)
 
+
             val userImageView = postView.findViewById<ImageView>(R.id.userImage) // userImage 추가
 // 사용자 프로필 이미지 설정
             val userInfo = Database.getUserInfo(post.userId)
