@@ -47,6 +47,7 @@ class MyPageActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        //
     }
 
     private fun init() {
