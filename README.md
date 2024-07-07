@@ -10,9 +10,9 @@
 * 24.07.02 - 24.07.05
 
 ### 🧑‍🤝‍🧑 맴버구성
- - 팀장  : <a href="https://https://github.com/1chanhue1" >김찬휘</a> - Git 관리, 메인 페이지 구현
- - 팀원1 : <a href="https://https://github.com/ggilggilmonster" >정용찬</a> - 로그인, 회원가입 구현
- - 팀원2 : <a href="https://https://github.com/kim4152" >김정호</a> - 데이터 관리, 마이 페이지 구현
+ - 팀장  : <a href="https://github.com/1chanhue1" >김찬휘</a> - Git 관리, 메인 페이지 구현
+ - 팀원1 : <a href="https://github.com/ggilggilmonster" >정용찬</a> - 로그인, 회원가입 구현
+ - 팀원2 : <a href="https://github.com/kim4152" >김정호</a> - 데이터 관리, 마이 페이지 구현
  - 팀원3 : <a href="https://github.com/Dyaoss" >김대현</a> - 디테일 페이지 구현
 
 ⚙️ 앱 개발 환경
